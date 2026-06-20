@@ -11,7 +11,12 @@
 <meta property="og:url" content="https://coinsuitetool.com/"/>
 <meta property="og:title" content="CryptoTools Pro — Free DCA, Fee, Risk & Tax Calculator"/>
 <meta property="og:description" content="4 free crypto tools in one place: DCA calculator, exchange fee comparator, position size calculator, and global tax estimator."/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:site" content="@Justin_David12"/>
+<meta name="twitter:title" content="CryptoTools Pro — Free DCA, Fee, Risk &amp; Tax Calculator"/>
+<meta name="twitter:description" content="4 free crypto tools: DCA with live prices, exchange fee comparator, position size calculator, crypto tax for US/UK/CA/AU/DE/IN/SG/UAE/FR/JP. No signup."/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CryptoTools Pro","url":"https://coinsuitetool.com/","description":"Free cryptocurrency toolkit with DCA calculator, exchange fee comparator, position size calculator, and global tax estimator.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does crypto dollar-cost averaging (DCA) work?","acceptedAnswer":{"@type":"Answer","text":"DCA means buying a fixed dollar amount of crypto at regular intervals regardless of price. Over time this averages out your cost basis — you buy more coins when prices are low and fewer when prices are high. Use the DCA calculator at coinsuitetool.com to see your exact returns with live historical prices."}},{"@type":"Question","name":"Which crypto exchange has the lowest trading fees?","acceptedAnswer":{"@type":"Answer","text":"Hyperliquid has the lowest futures fees (-0.01% maker rebate, 0.035% taker). For spot trading, Bybit and OKX offer 0.08–0.10% fees. Coinbase Advanced charges the highest at 0.40–0.60%. See the full comparison at coinsuitetool.com."}},{"@type":"Question","name":"Is crypto tax-free in Germany?","acceptedAnswer":{"@type":"Answer","text":"Yes — in Germany, cryptocurrency held for more than 1 year is completely tax-free (§23 EStG). If held less than 1 year, gains are taxed at a flat 25% Abgeltungssteuer plus 5.5% solidarity surcharge. Use the free tax estimator at coinsuitetool.com to calculate your liability."}},{"@type":"Question","name":"Is there capital gains tax on crypto in Singapore?","acceptedAnswer":{"@type":"Answer","text":"No. Singapore does not have a capital gains tax, so individual investors pay 0% tax on cryptocurrency profits. Singapore is one of the most crypto-friendly tax jurisdictions in the world."}},{"@type":"Question","name":"How much tax do I pay on crypto in India?","acceptedAnswer":{"@type":"Answer","text":"India taxes cryptocurrency gains at a flat 30% rate regardless of holding period, plus a 4% Health and Education Cess, for an effective rate of 31.2%. Losses cannot be offset against other income."}},{"@type":"Question","name":"How do I calculate position size for crypto trading?","acceptedAnswer":{"@type":"Answer","text":"Position size = (Account size × Risk %) ÷ (|Entry price − Stop price| ÷ Entry price). For example: $10,000 account, 2% risk, entry at $100,000, stop at $95,000 → Position = $200 ÷ 5% = $4,000. Use the free position size calculator at coinsuitetool.com."}}]}</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#0a0a0a;--card:#111;--border:#1e1e1e;--text:#e5e5e5;--muted:#555;--accent:#22c55e;--adim:#22c55e14;--aborder:#22c55e33;--red:#f87171;--yellow:#f0b429}
@@ -123,7 +128,7 @@ nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-betw
   </div>
   <div class="pills">
     <div class="pill">Live Prices <span>✓</span></div>
-    <div class="pill">BTC / ETH / SOL / XRP / BNB <span>✓</span></div>
+    <div class="pill">BTC / ETH / SOL / XRP / DOGE / AVAX + more <span>✓</span></div>
     <div class="pill">Weekly & Monthly <span>✓</span></div>
     <div class="pill">Up to 5 Years <span>✓</span></div>
   </div>
@@ -137,6 +142,12 @@ nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-betw
           <option value="SOLUSD">Solana (SOL)</option>
           <option value="XRPUSD">XRP</option>
           <option value="ADAUSD">Cardano (ADA)</option>
+          <option value="DOTUSD">Polkadot (DOT)</option>
+          <option value="AVAXUSD">Avalanche (AVAX)</option>
+          <option value="LINKUSD">Chainlink (LINK)</option>
+          <option value="LTCUSD">Litecoin (LTC)</option>
+          <option value="XDGUSD">Dogecoin (DOGE)</option>
+          <option value="MATICUSD">Polygon (MATIC)</option>
         </select>
       </div>
       <div class="field"><label>Amount per period</label>
@@ -294,11 +305,16 @@ nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-betw
     <p>Estimate your crypto capital gains tax for US, UK, Canada, Australia, and Germany. Free, no signup, results in seconds.</p>
   </div>
   <div class="pills">
-    <div class="pill">🇺🇸 United States <span>✓</span></div>
-    <div class="pill">🇬🇧 United Kingdom <span>✓</span></div>
+    <div class="pill">🇺🇸 US <span>✓</span></div>
+    <div class="pill">🇬🇧 UK <span>✓</span></div>
     <div class="pill">🇨🇦 Canada <span>✓</span></div>
     <div class="pill">🇦🇺 Australia <span>✓</span></div>
     <div class="pill">🇩🇪 Germany <span>✓</span></div>
+    <div class="pill">🇮🇳 India <span>✓</span></div>
+    <div class="pill">🇸🇬 Singapore <span>✓</span></div>
+    <div class="pill">🇦🇪 UAE <span>✓</span></div>
+    <div class="pill">🇫🇷 France <span>✓</span></div>
+    <div class="pill">🇯🇵 Japan <span>✓</span></div>
     <div class="pill">2025 &amp; 2026 Rates <span>✓</span></div>
   </div>
   <div class="g2">
@@ -311,6 +327,11 @@ nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-betw
           <option value="ca">🇨🇦 Canada</option>
           <option value="au">🇦🇺 Australia</option>
           <option value="de">🇩🇪 Germany</option>
+          <option value="in">🇮🇳 India</option>
+          <option value="sg">🇸🇬 Singapore</option>
+          <option value="ae">🇦🇪 UAE</option>
+          <option value="fr">🇫🇷 France</option>
+          <option value="jp">🇯🇵 Japan</option>
         </select>
       </div>
       <div class="field"><label>Total crypto gains (profit only)</label>
@@ -357,6 +378,35 @@ nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-betw
   </div>
 </div>
 
+<section style="max-width:700px;margin:0 auto;padding:0 16px 40px">
+  <h2 style="font-size:1rem;font-weight:800;margin-bottom:18px;text-align:center;color:#333;letter-spacing:-.01em">Frequently Asked Questions</h2>
+  <div style="display:flex;flex-direction:column;gap:10px">
+    <details style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px 16px;cursor:pointer">
+      <summary style="font-weight:700;font-size:.86rem;list-style:none;color:#e5e5e5">How does crypto DCA work?</summary>
+      <p style="margin-top:10px;font-size:.82rem;color:#777;line-height:1.6">Dollar-cost averaging means buying a fixed dollar amount at regular intervals regardless of price. You buy more coins when prices are low and fewer when high — averaging out your cost over time. This calculator uses real historical prices from Kraken to show your actual returns.</p>
+    </details>
+    <details style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px 16px;cursor:pointer">
+      <summary style="font-weight:700;font-size:.86rem;list-style:none;color:#e5e5e5">Which crypto exchange has the lowest fees?</summary>
+      <p style="margin-top:10px;font-size:.82rem;color:#777;line-height:1.6">Hyperliquid has the lowest futures fees (-0.01% maker rebate). For spot, Bybit and OKX charge just 0.08–0.10%. Coinbase charges the most at 0.40–0.60% taker. Switching from Coinbase to Bybit can save hundreds per month on active trading volume.</p>
+    </details>
+    <details style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px 16px;cursor:pointer">
+      <summary style="font-weight:700;font-size:.86rem;list-style:none;color:#e5e5e5">Is crypto tax-free in Germany?</summary>
+      <p style="margin-top:10px;font-size:.82rem;color:#777;line-height:1.6">Yes — under §23 EStG, crypto held for more than 1 year is completely tax-free in Germany. If sold within 1 year, gains are taxed at 25% (Abgeltungssteuer) plus 5.5% solidarity surcharge. This is one of the most favorable crypto tax rules in Europe.</p>
+    </details>
+    <details style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px 16px;cursor:pointer">
+      <summary style="font-weight:700;font-size:.86rem;list-style:none;color:#e5e5e5">Is there crypto capital gains tax in Singapore or UAE?</summary>
+      <p style="margin-top:10px;font-size:.82rem;color:#777;line-height:1.6">Neither Singapore nor the UAE charge capital gains tax on crypto. Singapore has no CGT at all. The UAE has no personal income tax. Both are among the most crypto-friendly jurisdictions globally for individual investors.</p>
+    </details>
+    <details style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px 16px;cursor:pointer">
+      <summary style="font-weight:700;font-size:.86rem;list-style:none;color:#e5e5e5">How much tax do I pay on crypto in India?</summary>
+      <p style="margin-top:10px;font-size:.82rem;color:#777;line-height:1.6">India taxes all cryptocurrency gains at a flat 30% regardless of holding period, plus a 4% Health and Education Cess — giving an effective rate of 31.2%. Losses cannot be offset against other income, and the rules apply to all VDAs (Virtual Digital Assets) as of April 2022.</p>
+    </details>
+    <details style="background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px 16px;cursor:pointer">
+      <summary style="font-weight:700;font-size:.86rem;list-style:none;color:#e5e5e5">How do I calculate crypto position size?</summary>
+      <p style="margin-top:10px;font-size:.82rem;color:#777;line-height:1.6">Position size = (Account × Risk%) ÷ Stop distance%. Example: $10,000 account, 2% risk, entry $100,000, stop $95,000 → Stop distance = 5% → Position = $200 ÷ 5% = $4,000. Never risk more than 1–2% per trade to survive a losing streak.</p>
+    </details>
+  </div>
+</section>
 <p class="disc">CryptoTools Pro provides estimates only. Not financial or tax advice. Exchange fees change frequently — verify before trading. Consult a qualified professional for your specific situation.</p>
 
 <script>
@@ -486,6 +536,8 @@ function setHold(h){taxHold=h;document.getElementById('tg-st').classList.toggle(
 function onCountry(){
   const c=document.getElementById('t-country').value;
   document.getElementById('state-f').style.display=c==='us'?'block':'none';
+  const noIncome=['in','sg','ae','fr'];
+  document.getElementById('inc-f').style.display=noIncome.includes(c)?'none':'block';
 }
 
 function calcTax(){
@@ -544,6 +596,21 @@ function calcTax(){
   }else if(country==='de'){
     if(taxHold==='long'){l1=0;lbl1='Germany: Tax-free (held >1 year ✓)';}
     else{l1=gains*0.25;l2=l1*0.055;lbl1='Abgeltungssteuer (25%)';lbl2='Solidarity surcharge (5.5%)';show2=true;}
+  }else if(country==='in'){
+    l1=gains*0.30;l2=l1*0.04;
+    lbl1='Flat 30% crypto tax (India)';lbl2='Health & Education Cess (4%)';show2=true;
+  }else if(country==='sg'){
+    l1=0;lbl1='Singapore: No capital gains tax on crypto ✓';
+  }else if(country==='ae'){
+    l1=0;lbl1='UAE: No personal income tax ✓';
+  }else if(country==='fr'){
+    l1=gains*0.128;l2=gains*0.172;
+    lbl1='French income tax on crypto (12.8%)';lbl2='Social charges — prélèvements sociaux (17.2%)';show2=true;
+  }else if(country==='jp'){
+    const tot=income+gains;
+    const rate=tot<12000?.05:tot<24000?.10:tot<60000?.20:tot<120000?.23:tot<240000?.33:.45;
+    l1=gains*rate;l2=gains*0.10;
+    lbl1=`Japan: Miscellaneous income tax (~${Math.round(rate*100)}%)`;lbl2='Local inhabitant tax (10%)';show2=true;
   }
 
   const total=l1+l2+l3;
