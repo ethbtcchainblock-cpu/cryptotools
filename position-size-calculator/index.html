@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Crypto Position Size Calculator — Risk Management Tool for Traders</title>
+<meta name="description" content="Free crypto position size calculator. Enter your account size, risk percentage, entry price and stop loss to get your exact position size in dollars and units. Works for any asset."/>
+<meta name="keywords" content="crypto position size calculator, bitcoin position size, crypto risk calculator, position sizing crypto, stop loss calculator crypto, how much to invest in crypto trade"/>
+<link rel="canonical" href="https://coinsuitetool.com/position-size-calculator/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://coinsuitetool.com/position-size-calculator/"/>
+<meta property="og:title" content="Crypto Position Size Calculator — Never Risk More Than You Can Afford"/>
+<meta property="og:description" content="Calculate the exact position size for any crypto trade based on your account size, risk %, entry and stop loss. Free, instant, works for any asset."/>
+<meta property="og:image" content="https://coinsuitetool.com/og-image.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://coinsuitetool.com/og-image.svg"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Crypto Position Size Calculator","url":"https://coinsuitetool.com/position-size-calculator/","description":"Calculate exact crypto position sizes based on account size, risk percentage, entry price and stop loss. Works for Bitcoin, Ethereum and any other asset.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How do I calculate position size for crypto trading?","acceptedAnswer":{"@type":"Answer","text":"Position size = (Account size × Risk %) ÷ Stop distance %. Example: $10,000 account, 2% risk, entry at $100,000, stop at $95,000 (5% away) → Position = ($10,000 × 2%) ÷ 5% = $4,000. Use this free calculator to get the exact number instantly."}},{"@type":"Question","name":"What percentage of my account should I risk per crypto trade?","acceptedAnswer":{"@type":"Answer","text":"Most professional traders risk 1-2% per trade. At 2% risk, you would need 50 consecutive losing trades to blow your account. At 10% risk per trade, 10 losses in a row wipes you out. Stick to 1-2% to survive drawdowns and stay in the game."}},{"@type":"Question","name":"What is a stop loss in crypto trading?","acceptedAnswer":{"@type":"Answer","text":"A stop loss is a predetermined price at which you exit a losing trade to cap your loss. For example, if you buy Bitcoin at $100,000 and set a stop at $95,000, your maximum loss is 5% of your position size. Stop losses are essential for risk management."}},{"@type":"Question","name":"Does position sizing work for futures and leverage trading?","acceptedAnswer":{"@type":"Answer","text":"Yes. This calculator gives you the notional position size. For leveraged trading, divide the position size by your leverage to get the margin required. For example, a $4,000 position with 5x leverage requires $800 margin."}}]}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0a;--card:#111;--border:#1e1e1e;--text:#e5e5e5;--muted:#555;--accent:#22c55e;--adim:#22c55e14;--aborder:#22c55e33;--red:#f87171}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;min-height:100vh}
+nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.logo{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-.02em;text-decoration:none}
+.logo span{color:var(--accent)}
+.back{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:6px 12px;border-radius:7px}
+.hero{text-align:center;padding:40px 20px 24px;max-width:680px;margin:0 auto}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.03em;margin-bottom:10px;line-height:1.15}
+.hero h1 span{color:var(--accent)}
+.hero p{color:var(--muted);font-size:.9rem;line-height:1.6}
+.pills{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;margin:16px auto 0;max-width:680px;padding:0 16px}
+.pill{background:#141414;border:1px solid var(--border);color:#555;font-size:.7rem;padding:3px 10px;border-radius:100px}
+.pill span{color:var(--accent)}
+.tool{max-width:860px;margin:0 auto;padding:16px 16px 40px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:14px}
+.card-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:16px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+.field{margin-bottom:13px}.field:last-child{margin-bottom:0}
+.field label{display:block;font-size:.79rem;color:var(--muted);margin-bottom:5px;font-weight:500}
+.field input{width:100%;background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:10px 12px;color:var(--text);font-size:.9rem;outline:none;transition:border-color .15s;font-family:inherit}
+.field input:focus{border-color:var(--accent)}
+.pfx{position:relative}.pfx::before{content:"$";position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#444;font-size:.88rem;z-index:1;pointer-events:none}
+.pfx input{padding-left:23px}
+.tgl-g{display:flex;gap:5px}
+.tgl{flex:1;background:#0d0d0d;border:1px solid #222;border-radius:7px;padding:8px 6px;color:var(--muted);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .15s;text-align:center;font-family:inherit}
+.tgl.on{background:var(--adim);border-color:var(--aborder);color:var(--accent)}
+.btn{width:100%;background:var(--accent);color:#000;font-weight:800;font-size:.92rem;padding:12px;border-radius:9px;border:none;cursor:pointer;transition:opacity .15s;font-family:inherit;margin-top:6px}
+.btn:hover{opacity:.87}
+.rbox{background:#0d0d0d;border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.rrow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #141414;font-size:.86rem}
+.rrow:last-child{border-bottom:none}
+.rrow .l{color:var(--muted)}.rrow .v{font-weight:700}
+.rrow.big .l{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:#444}
+.rrow.big .v{font-size:1.7rem;font-weight:800;letter-spacing:-.03em}
+.pos{color:var(--accent)}.neg{color:var(--red)}
+.phld{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 16px;text-align:center;color:#2a2a2a}
+.phld p{font-size:.82rem;margin-top:10px;line-height:1.5}
+.cta-card{background:linear-gradient(135deg,#0a1a0a,#0d1f0d);border:1px solid var(--aborder);border-radius:14px;padding:22px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:14px}
+.cta-card h4{font-size:.92rem;font-weight:700;margin-bottom:5px}
+.cta-card p{font-size:.83rem;color:var(--muted);max-width:360px;line-height:1.55}
+.cta-a{display:inline-block;background:var(--accent);color:#000;font-weight:800;font-size:.85rem;padding:11px 20px;border-radius:8px;text-decoration:none;white-space:nowrap}
+.suite-link{display:block;text-align:center;margin:20px auto;font-size:.85rem;color:var(--muted)}
+.suite-link a{color:var(--accent);text-decoration:none;font-weight:700}
+.faq{max-width:700px;margin:0 auto;padding:0 16px 40px}
+.faq h2{font-size:1rem;font-weight:800;margin-bottom:18px;text-align:center;color:#333}
+details{background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px 16px;cursor:pointer;margin-bottom:8px}
+summary{font-weight:700;font-size:.86rem;list-style:none;color:#e5e5e5}
+details p{margin-top:10px;font-size:.82rem;color:#777;line-height:1.6}
+.disc{text-align:center;color:#272727;font-size:.7rem;padding:16px;max-width:560px;margin:0 auto;line-height:1.6}
+</style>
+</head>
+<body>
+<nav>
+  <a href="https://coinsuitetool.com" class="logo">Crypto<span>Tools</span> Pro</a>
+  <a href="https://coinsuitetool.com" class="back">← All 4 Tools</a>
+</nav>
+<div class="hero">
+  <h1>Crypto <span>Position Size</span> Calculator</h1>
+  <p>Never risk more than you can afford. Get your exact position size in seconds based on your account, risk tolerance, and stop loss level.</p>
+</div>
+<div class="pills">
+  <div class="pill">Spot &amp; Futures <span>✓</span></div>
+  <div class="pill">Any Asset <span>✓</span></div>
+  <div class="pill">Risk % Based <span>✓</span></div>
+  <div class="pill">Works Worldwide <span>✓</span></div>
+</div>
+<div class="tool">
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Trade Parameters</div>
+      <div class="field"><label>Account size</label>
+        <div class="pfx"><input type="number" id="r-acct" placeholder="10,000" min="0"/></div>
+      </div>
+      <div class="field"><label>Risk per trade</label>
+        <div class="tgl-g">
+          <button class="tgl" id="tg-r1" onclick="setRisk(1)">1%</button>
+          <button class="tgl on" id="tg-r2" onclick="setRisk(2)">2%</button>
+          <button class="tgl" id="tg-r3" onclick="setRisk(3)">3%</button>
+          <button class="tgl" id="tg-r5" onclick="setRisk(5)">5%</button>
+        </div>
+      </div>
+      <div class="field"><label>Entry price</label>
+        <div class="pfx"><input type="number" id="r-entry" placeholder="100,000"/></div>
+      </div>
+      <div class="field"><label>Stop loss price</label>
+        <div class="pfx"><input type="number" id="r-stop" placeholder="95,000"/></div>
+      </div>
+      <button class="btn" onclick="calcRisk()">Calculate Position →</button>
+    </div>
+    <div class="card">
+      <div class="card-title">Your Position</div>
+      <div class="phld" id="risk-ph"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg><p>Enter your trade details and click Calculate</p></div>
+      <div id="risk-res" style="display:none">
+        <div class="rbox">
+          <div class="rrow big"><span class="l">Position Size</span><span class="v pos" id="r-pos-usd">—</span></div>
+          <div class="rrow"><span class="l">In coins/units</span><span class="v" id="r-pos-coin">—</span></div>
+          <div class="rrow"><span class="l">Max loss ($)</span><span class="v neg" id="r-risk-usd">—</span></div>
+          <div class="rrow"><span class="l">Stop distance</span><span class="v" id="r-stop-pct">—</span></div>
+          <div class="rrow"><span class="l">% of account risked</span><span class="v" id="r-acct-pct">—</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-card" id="risk-cta" style="display:none">
+    <div><h4>Reporting your trading profits at tax time?</h4><p>Koinly imports your entire trade history from 700+ exchanges and wallets and generates a complete tax report — IRS, HMRC, ATO and more.</p></div>
+    <a href="https://koinly.io/?via=25ED9818&utm_source=affiliate" target="_blank" class="cta-a">Auto-Track on Koinly →</a>
+  </div>
+</div>
+
+<p class="suite-link">Also need a DCA calculator, fee comparator, or tax estimator? <a href="https://coinsuitetool.com">Try all 4 free tools →</a></p>
+
+<div class="faq">
+  <h2>Position Sizing FAQs</h2>
+  <details><summary>How do I calculate position size for a crypto trade?</summary><p>Formula: Position size = (Account × Risk%) ÷ Stop distance%. Example: $10,000 account, 2% risk, entry $100,000, stop $95,000 → Stop distance = 5% → Position = $200 ÷ 5% = $4,000. Enter your numbers above for the instant answer.</p></details>
+  <details><summary>What % of my account should I risk per trade?</summary><p>Most professional traders risk 1–2% per trade. At 2% risk you'd need 50 consecutive losses to wipe out. At 10% risk per trade, just 10 losses destroys your account. Stick to 1–2% to survive drawdowns.</p></details>
+  <details><summary>What is a stop loss in crypto?</summary><p>A stop loss is a price level where you exit a losing trade to cap your loss. If you buy Bitcoin at $100,000 and set a stop at $95,000, your maximum loss is 5% of your position. Stop losses are non-negotiable for serious traders.</p></details>
+  <details><summary>Does this work for leveraged / futures trading?</summary><p>Yes. This calculator gives you the notional position size. For leveraged trading, divide by your leverage to get the margin required. E.g. a $4,000 position at 5x leverage = $800 margin needed.</p></details>
+</div>
+<p class="disc">Not financial advice. Always use stop losses and never risk more than you can afford to lose.</p>
+<script>
+const fmt = n => '$'+Math.round(n).toLocaleString();
+let riskPct=2;
+function setRisk(r){riskPct=r;[1,2,3,5].forEach(v=>document.getElementById('tg-r'+v).classList.toggle('on',v===r));}
+function calcRisk(){
+  const acct=parseFloat(document.getElementById('r-acct').value)||0;
+  const entry=parseFloat(document.getElementById('r-entry').value)||0;
+  const stop=parseFloat(document.getElementById('r-stop').value)||0;
+  if(!acct||!entry||!stop){alert('Please fill in all fields.');return;}
+  const riskUsd=acct*riskPct/100;
+  const stopDist=Math.abs(entry-stop)/entry;
+  const posUsd=riskUsd/stopDist;
+  const posCoins=posUsd/entry;
+  document.getElementById('risk-ph').style.display='none';
+  document.getElementById('risk-res').style.display='block';
+  document.getElementById('risk-cta').style.display='flex';
+  document.getElementById('r-pos-usd').textContent=fmt(posUsd);
+  document.getElementById('r-pos-coin').textContent=posCoins.toFixed(6)+' units';
+  document.getElementById('r-risk-usd').textContent=fmt(riskUsd);
+  document.getElementById('r-stop-pct').textContent=(stopDist*100).toFixed(2)+'%';
+  document.getElementById('r-acct-pct').textContent=riskPct+'%';
+}
+</script>
+</body>
+</html>

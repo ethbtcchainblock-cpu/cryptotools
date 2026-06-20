@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Crypto Tax Calculator 2025 2026 — US, UK, India, Canada, Australia & More</title>
+<meta name="description" content="Free crypto capital gains tax calculator for US, UK, India, Canada, Australia, Germany, Singapore, UAE, France and Japan. Instant estimate, no signup, 2025 & 2026 tax rates."/>
+<meta name="keywords" content="crypto tax calculator, bitcoin tax calculator, crypto capital gains tax, crypto tax india, uk crypto tax calculator, australia crypto tax, germany crypto tax free"/>
+<link rel="canonical" href="https://coinsuitetool.com/crypto-tax-calculator/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://coinsuitetool.com/crypto-tax-calculator/"/>
+<meta property="og:title" content="Free Crypto Tax Calculator — 10 Countries, 2025 & 2026 Rates"/>
+<meta property="og:description" content="Estimate your crypto capital gains tax for US, UK, India, Canada, Australia, Germany, Singapore, UAE, France and Japan. Free, instant, no signup."/>
+<meta property="og:image" content="https://coinsuitetool.com/og-image.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://coinsuitetool.com/og-image.svg"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Crypto Tax Calculator","url":"https://coinsuitetool.com/crypto-tax-calculator/","description":"Free cryptocurrency capital gains tax estimator covering US, UK, India, Canada, Australia, Germany, Singapore, UAE, France and Japan.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much tax do I pay on crypto in India?","acceptedAnswer":{"@type":"Answer","text":"India taxes all cryptocurrency gains at a flat 30% regardless of holding period, plus a 4% Health and Education Cess — giving an effective rate of 31.2%. Losses cannot be offset against other income under Indian crypto tax law (Section 115BBH)."}},{"@type":"Question","name":"Is crypto tax-free in Germany?","acceptedAnswer":{"@type":"Answer","text":"Yes — cryptocurrency held for more than 1 year is completely tax-free in Germany under §23 EStG. If sold within 1 year, gains are taxed at 25% (Abgeltungssteuer) plus 5.5% solidarity surcharge."}},{"@type":"Question","name":"How is crypto taxed in the UK?","acceptedAnswer":{"@type":"Answer","text":"UK crypto gains are subject to Capital Gains Tax. Basic rate taxpayers pay 10%, higher rate taxpayers (income over £50,270) pay 20%. There is a £3,000 annual tax-free allowance for 2024-25."}},{"@type":"Question","name":"Do Singapore and UAE charge crypto tax?","acceptedAnswer":{"@type":"Answer","text":"No. Singapore has no capital gains tax, so crypto profits are tax-free for individual investors. The UAE also has no personal income tax. Both are among the most crypto-friendly tax jurisdictions in the world."}},{"@type":"Question","name":"How is crypto taxed in the US?","acceptedAnswer":{"@type":"Answer","text":"In the US, crypto is taxed as property. Short-term gains (held under 1 year) are taxed as ordinary income at your marginal rate (10-37%). Long-term gains (held over 1 year) are taxed at 0%, 15%, or 20% depending on income. State taxes may also apply."}}]}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0a;--card:#111;--border:#1e1e1e;--text:#e5e5e5;--muted:#555;--accent:#22c55e;--adim:#22c55e14;--aborder:#22c55e33;--red:#f87171}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;min-height:100vh}
+nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.logo{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-.02em;text-decoration:none}
+.logo span{color:var(--accent)}
+.back{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:6px 12px;border-radius:7px}
+.back:hover{color:var(--text)}
+.hero{text-align:center;padding:40px 20px 24px;max-width:680px;margin:0 auto}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.03em;margin-bottom:10px;line-height:1.15}
+.hero h1 span{color:var(--accent)}
+.hero p{color:var(--muted);font-size:.9rem;line-height:1.6}
+.pills{display:flex;gap:5px;flex-wrap:wrap;justify-content:center;margin:16px auto 0;max-width:680px;padding:0 16px}
+.pill{background:#141414;border:1px solid var(--border);color:#555;font-size:.7rem;padding:3px 10px;border-radius:100px}
+.pill span{color:var(--accent)}
+.tool{max-width:860px;margin:0 auto;padding:16px 16px 40px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:14px}
+.card-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:16px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+.field{margin-bottom:13px}.field:last-child{margin-bottom:0}
+.field label{display:block;font-size:.79rem;color:var(--muted);margin-bottom:5px;font-weight:500}
+.field input,.field select{width:100%;background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:10px 12px;color:var(--text);font-size:.9rem;outline:none;transition:border-color .15s;font-family:inherit}
+.field input:focus,.field select:focus{border-color:var(--accent)}
+.field select option{background:#111}
+.pfx{position:relative}.pfx::before{content:"$";position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#444;font-size:.88rem;z-index:1;pointer-events:none}
+.pfx input{padding-left:23px}
+.tgl-g{display:flex;gap:5px}
+.tgl{flex:1;background:#0d0d0d;border:1px solid #222;border-radius:7px;padding:8px 6px;color:var(--muted);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .15s;text-align:center;font-family:inherit}
+.tgl.on{background:var(--adim);border-color:var(--aborder);color:var(--accent)}
+.btn{width:100%;background:var(--accent);color:#000;font-weight:800;font-size:.92rem;padding:12px;border-radius:9px;border:none;cursor:pointer;transition:opacity .15s;font-family:inherit;margin-top:6px}
+.btn:hover{opacity:.87}
+.rbox{background:#0d0d0d;border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.rrow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #141414;font-size:.86rem}
+.rrow:last-child{border-bottom:none}
+.rrow .l{color:var(--muted)}.rrow .v{font-weight:700}
+.rrow.big .l{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:#444}
+.rrow.big .v{font-size:1.7rem;font-weight:800;letter-spacing:-.03em}
+.neg{color:var(--red)}.pos{color:var(--accent)}
+.kbar{background:var(--adim);border:1px solid var(--aborder);border-radius:8px;padding:11px 14px;display:flex;justify-content:space-between;align-items:center;margin-top:10px}
+.kbar .l{font-size:.78rem;color:#22c55e88}.kbar .v{font-size:1rem;font-weight:800;color:var(--accent)}
+.phld{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 16px;text-align:center;color:#2a2a2a}
+.phld p{font-size:.82rem;margin-top:10px;line-height:1.5}
+.cta-card{background:linear-gradient(135deg,#0a1a0a,#0d1f0d);border:1px solid var(--aborder);border-radius:14px;padding:22px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:14px}
+.cta-card h4{font-size:.92rem;font-weight:700;margin-bottom:5px}
+.cta-card p{font-size:.83rem;color:var(--muted);max-width:360px;line-height:1.55}
+.cta-a{display:inline-block;background:var(--accent);color:#000;font-weight:800;font-size:.85rem;padding:11px 20px;border-radius:8px;text-decoration:none;white-space:nowrap}
+.suite-link{display:block;text-align:center;margin:20px auto;font-size:.85rem;color:var(--muted)}
+.suite-link a{color:var(--accent);text-decoration:none;font-weight:700}
+.faq{max-width:700px;margin:0 auto;padding:0 16px 40px}
+.faq h2{font-size:1rem;font-weight:800;margin-bottom:18px;text-align:center;color:#333}
+details{background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px 16px;cursor:pointer;margin-bottom:8px}
+summary{font-weight:700;font-size:.86rem;list-style:none;color:#e5e5e5}
+details p{margin-top:10px;font-size:.82rem;color:#777;line-height:1.6}
+.disc{text-align:center;color:#272727;font-size:.7rem;padding:16px;max-width:560px;margin:0 auto;line-height:1.6}
+</style>
+</head>
+<body>
+<nav>
+  <a href="https://coinsuitetool.com" class="logo">Crypto<span>Tools</span> Pro</a>
+  <a href="https://coinsuitetool.com" class="back">← All 4 Tools</a>
+</nav>
+<div class="hero">
+  <h1>Crypto <span>Tax Calculator</span><br/>2025 &amp; 2026</h1>
+  <p>Estimate your cryptocurrency capital gains tax instantly. Covers 10 countries with current tax rates. Free, no signup, results in seconds.</p>
+</div>
+<div class="pills">
+  <div class="pill">🇺🇸 US <span>✓</span></div><div class="pill">🇬🇧 UK <span>✓</span></div><div class="pill">🇨🇦 Canada <span>✓</span></div><div class="pill">🇦🇺 Australia <span>✓</span></div><div class="pill">🇩🇪 Germany <span>✓</span></div><div class="pill">🇮🇳 India <span>✓</span></div><div class="pill">🇸🇬 Singapore <span>✓</span></div><div class="pill">🇦🇪 UAE <span>✓</span></div><div class="pill">🇫🇷 France <span>✓</span></div><div class="pill">🇯🇵 Japan <span>✓</span></div>
+</div>
+<div class="tool">
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Your Details</div>
+      <div class="field"><label>Country</label>
+        <select id="t-country" onchange="onCountry()">
+          <option value="us">🇺🇸 United States</option>
+          <option value="uk">🇬🇧 United Kingdom</option>
+          <option value="ca">🇨🇦 Canada</option>
+          <option value="au">🇦🇺 Australia</option>
+          <option value="de">🇩🇪 Germany</option>
+          <option value="in">🇮🇳 India</option>
+          <option value="sg">🇸🇬 Singapore</option>
+          <option value="ae">🇦🇪 UAE</option>
+          <option value="fr">🇫🇷 France</option>
+          <option value="jp">🇯🇵 Japan</option>
+        </select>
+      </div>
+      <div class="field"><label>Total crypto gains</label>
+        <div class="pfx"><input type="number" id="t-gains" placeholder="10,000"/></div>
+      </div>
+      <div class="field"><label>Holding period</label>
+        <div class="tgl-g">
+          <button class="tgl on" id="tg-st" onclick="setHold('short')">Short-term (&lt;1yr)</button>
+          <button class="tgl" id="tg-lt" onclick="setHold('long')">Long-term (&gt;1yr)</button>
+        </div>
+      </div>
+      <div class="field" id="inc-f"><label>Annual income (excl. gains)</label>
+        <div class="pfx"><input type="number" id="t-income" placeholder="75,000"/></div>
+      </div>
+      <div class="field" id="state-f"><label>State</label>
+        <select id="t-state">
+          <option value="ny">New York (+ NYC)</option>
+          <option value="ca-st">California</option>
+          <option value="tx">Texas (no state tax)</option>
+          <option value="fl">Florida (no state tax)</option>
+          <option value="other">Other state (~5%)</option>
+        </select>
+      </div>
+      <button class="btn" onclick="calcTax()">Calculate Tax →</button>
+    </div>
+    <div class="card">
+      <div class="card-title">Tax Breakdown</div>
+      <div class="phld" id="tax-ph"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M9 9h6M9 12h6M9 15h4"/></svg><p>Enter your details and click Calculate</p></div>
+      <div id="tax-res" style="display:none">
+        <div class="rbox">
+          <div class="rrow big"><span class="l">Total Tax</span><span class="v neg" id="t-total">—</span></div>
+          <div class="rrow"><span class="l" id="t-l1-lbl">Tax</span><span class="v" id="t-l1">—</span></div>
+          <div class="rrow" id="t-l2-row"><span class="l" id="t-l2-lbl">—</span><span class="v" id="t-l2">—</span></div>
+          <div class="rrow" id="t-l3-row"><span class="l" id="t-l3-lbl">—</span><span class="v" id="t-l3">—</span></div>
+          <div class="rrow"><span class="l">Effective rate</span><span class="v" id="t-rate">—</span></div>
+        </div>
+        <div class="kbar"><span class="l">You keep</span><span class="v" id="t-keep">—</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-card" id="tax-cta" style="display:none">
+    <div><h4>This is an estimate. Your actual bill depends on every trade.</h4><p>Koinly imports all transactions from 700+ exchanges, calculates your exact gain/loss, and generates an IRS/HMRC/ATO-ready report.</p></div>
+    <a href="https://koinly.io/?via=25ED9818&utm_source=affiliate" target="_blank" class="cta-a">Get Exact Report on Koinly →</a>
+  </div>
+</div>
+
+<p class="suite-link">Also need a DCA calculator, fee comparator, or position sizer? <a href="https://coinsuitetool.com">Try all 4 free tools →</a></p>
+
+<div class="faq">
+  <h2>Crypto Tax by Country</h2>
+  <details><summary>How much crypto tax do I pay in India? 🇮🇳</summary><p>India taxes all crypto gains at a flat 30% + 4% Health and Education Cess = 31.2% effective rate. No deductions allowed, no loss offsets. Applies to all VDAs (Virtual Digital Assets) since April 2022.</p></details>
+  <details><summary>Is crypto tax-free in Germany? 🇩🇪</summary><p>Yes — crypto held more than 1 year is completely tax-free in Germany (§23 EStG). Under 1 year: 25% Abgeltungssteuer + 5.5% solidarity surcharge. One of Europe's most crypto-friendly tax regimes.</p></details>
+  <details><summary>How is crypto taxed in the UK? 🇬🇧</summary><p>UK CGT: 10% for basic rate taxpayers, 20% for higher rate (income over £50,270). Annual exempt amount of £3,000. HMRC treats crypto as property, not currency.</p></details>
+  <details><summary>Is crypto tax-free in Singapore or UAE? 🇸🇬🇦🇪</summary><p>Yes to both. Singapore has no capital gains tax. UAE has no personal income tax. Crypto gains are 0% in both countries for individual investors.</p></details>
+  <details><summary>How is crypto taxed in the US? 🇺🇸</summary><p>Short-term (under 1 year): ordinary income rates 10–37%. Long-term (over 1 year): 0%, 15%, or 20% depending on income. Plus state taxes. The IRS treats crypto as property.</p></details>
+</div>
+
+<p class="disc">Estimates only. Not tax advice. Consult a qualified professional for your specific situation.</p>
+
+<script>
+const fmt = n => '$'+Math.round(n).toLocaleString();
+let taxHold='short';
+function setHold(h){taxHold=h;document.getElementById('tg-st').classList.toggle('on',h==='short');document.getElementById('tg-lt').classList.toggle('on',h==='long');}
+function onCountry(){
+  const c=document.getElementById('t-country').value;
+  document.getElementById('state-f').style.display=c==='us'?'block':'none';
+  document.getElementById('inc-f').style.display=['in','sg','ae','fr'].includes(c)?'none':'block';
+}
+function calcTax(){
+  const country=document.getElementById('t-country').value;
+  const gains=parseFloat(document.getElementById('t-gains').value)||0;
+  const income=parseFloat(document.getElementById('t-income').value)||0;
+  if(!gains){alert('Please enter your crypto gains.');return;}
+  let l1=0,l2=0,l3=0,lbl1='Tax',lbl2='',lbl3='',show2=false,show3=false;
+  if(country==='us'){
+    const state=document.getElementById('t-state').value;
+    if(taxHold==='short'){
+      const brackets=[[11925,.10],[48475,.12],[103350,.22],[197300,.24],[250525,.32],[626350,.35],[Infinity,.37]];
+      const tot=income+gains;let prev=0;
+      for(const [lim,rate] of brackets){const inB=Math.min(tot,lim)-prev;const baseB=Math.min(income,lim)-Math.min(income,prev);if(inB>baseB)l1+=(inB-Math.max(0,baseB))*rate;prev=lim;if(prev>=tot)break;}
+    }else{
+      const thr=[[48350,0],[533400,.15],[Infinity,.20]];let prev=0;
+      for(const [lim,rate] of thr){const g=Math.max(0,Math.min(gains,lim-income)-Math.max(0,prev-income));l1+=g*rate;prev=lim;if(income+gains<=prev)break;}
+    }
+    lbl1='Federal capital gains tax';
+    if(state==='ny'){const ti=income+gains;const nyb=[[17150,.04],[23600,.045],[27900,.0525],[161550,.0585],[323200,.0625],[2155350,.0685],[25000000,.0965],[Infinity,.109]];let prev=0;for(const [lim,rate] of nyb){const inB=Math.min(ti,lim)-prev;const baseB=Math.min(income,lim)-Math.min(income,prev);if(inB>baseB)l2+=(inB-Math.max(0,baseB))*rate;prev=lim;if(prev>=ti)break;}l3=gains*0.03876;lbl2='NY State tax';lbl3='NYC local tax';show2=true;show3=true;}
+    else if(state==='ca-st'){l2=gains*0.133;lbl2='California state tax (13.3%)';show2=true;}
+    else if(state==='other'){l2=gains*0.05;lbl2='State income tax (~5% avg)';show2=true;}
+  }else if(country==='uk'){const higher=income>50270;l1=gains*(higher?.20:.10);lbl1=`UK CGT (${higher?20:10}%)`;}
+  else if(country==='ca'){const taxable=gains*0.5;const marg=income<55867?.205:income<111733?.26:income<154906?.29:.33;l1=taxable*marg;l2=taxable*0.10;lbl1='Federal (50% inclusion rate)';lbl2='Provincial tax (est.)';show2=true;}
+  else if(country==='au'){const taxable=taxHold==='long'?gains*0.5:gains;const marg=(income+taxable)<18201?0:(income+taxable)<45001?.19:(income+taxable)<135001?.325:(income+taxable)<190001?.37:.45;l1=taxable*marg+gains*0.02;lbl1=taxHold==='long'?'Australian CGT (50% discount)':'Australian CGT (no discount)';}
+  else if(country==='de'){if(taxHold==='long'){l1=0;lbl1='Germany: Tax-free (held >1 year ✓)';}else{l1=gains*0.25;l2=l1*0.055;lbl1='Abgeltungssteuer (25%)';lbl2='Solidarity surcharge (5.5%)';show2=true;}}
+  else if(country==='in'){l1=gains*0.30;l2=l1*0.04;lbl1='Flat 30% crypto tax';lbl2='Health & Education Cess (4%)';show2=true;}
+  else if(country==='sg'){l1=0;lbl1='Singapore: No capital gains tax ✓';}
+  else if(country==='ae'){l1=0;lbl1='UAE: No personal income tax ✓';}
+  else if(country==='fr'){l1=gains*0.128;l2=gains*0.172;lbl1='Income tax (12.8%)';lbl2='Social charges (17.2%)';show2=true;}
+  else if(country==='jp'){const tot=income+gains;const rate=tot<12000?.05:tot<24000?.10:tot<60000?.20:tot<120000?.23:tot<240000?.33:.45;l1=gains*rate;l2=gains*0.10;lbl1=`Miscellaneous income (~${Math.round(rate*100)}%)`;lbl2='Local tax (10%)';show2=true;}
+  const total=l1+l2+l3;
+  const effRate=gains>0?(total/gains*100).toFixed(1):0;
+  document.getElementById('tax-ph').style.display='none';
+  document.getElementById('tax-res').style.display='block';
+  document.getElementById('tax-cta').style.display='flex';
+  document.getElementById('t-total').textContent=fmt(total);
+  document.getElementById('t-l1-lbl').textContent=lbl1;
+  document.getElementById('t-l1').textContent=fmt(l1);
+  document.getElementById('t-l2-row').style.display=show2?'':'none';
+  document.getElementById('t-l2-lbl').textContent=lbl2;
+  document.getElementById('t-l2').textContent=fmt(l2);
+  document.getElementById('t-l3-row').style.display=show3?'':'none';
+  document.getElementById('t-l3-lbl').textContent=lbl3;
+  document.getElementById('t-l3').textContent=fmt(l3);
+  document.getElementById('t-rate').textContent=effRate+'%';
+  document.getElementById('t-keep').textContent=fmt(gains-total);
+}
+onCountry();
+</script>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Bitcoin DCA Calculator — See Your Real Returns With Live Prices</title>
+<meta name="description" content="Free Bitcoin DCA calculator using real historical prices. See exactly what $50, $100 or $500/week into BTC, ETH, SOL, DOGE or AVAX would be worth today. No signup."/>
+<meta name="keywords" content="bitcoin dca calculator, crypto dca calculator, dca returns calculator, dollar cost average bitcoin, how much would I have if I bought bitcoin every week"/>
+<link rel="canonical" href="https://coinsuitetool.com/dca-calculator/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://coinsuitetool.com/dca-calculator/"/>
+<meta property="og:title" content="Bitcoin DCA Calculator — Real Returns With Live Prices"/>
+<meta property="og:description" content="See what weekly or monthly crypto buys would be worth today. Free, live prices, no signup."/>
+<meta property="og:image" content="https://coinsuitetool.com/og-image.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://coinsuitetool.com/og-image.svg"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Bitcoin DCA Calculator","url":"https://coinsuitetool.com/dca-calculator/","description":"Calculate your crypto dollar-cost averaging returns using live historical prices from Kraken. Free, no signup.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is dollar-cost averaging (DCA) in crypto?","acceptedAnswer":{"@type":"Answer","text":"Dollar-cost averaging (DCA) means buying a fixed dollar amount of cryptocurrency at regular intervals (weekly or monthly) regardless of the price. This strategy reduces the impact of volatility — you buy more coins when prices are low and fewer when they're high, lowering your average cost over time."}},{"@type":"Question","name":"How much would $100/week in Bitcoin be worth today?","acceptedAnswer":{"@type":"Answer","text":"It depends on when you started. Use this free DCA calculator to plug in your exact amount, frequency, and time period to see your real returns using live historical Bitcoin prices. The calculator uses Kraken price data and supports periods from 6 months to 2 years."}},{"@type":"Question","name":"Is DCA better than lump sum investing in crypto?","acceptedAnswer":{"@type":"Answer","text":"Studies show DCA outperforms lump sum investing in volatile markets like crypto because it removes the risk of buying at a peak. However, in strongly trending bull markets, lump sum can outperform. DCA is generally recommended for most investors because it removes emotional decision-making."}},{"@type":"Question","name":"Which coins can I calculate DCA returns for?","acceptedAnswer":{"@type":"Answer","text":"This DCA calculator supports Bitcoin (BTC), Ethereum (ETH), Solana (SOL), XRP, Cardano (ADA), Polkadot (DOT), Avalanche (AVAX), Chainlink (LINK), Litecoin (LTC), Dogecoin (DOGE), and Polygon (MATIC). All prices use live data from Kraken."}}]}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0a;--card:#111;--border:#1e1e1e;--text:#e5e5e5;--muted:#555;--accent:#22c55e;--adim:#22c55e14;--aborder:#22c55e33;--red:#f87171}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;min-height:100vh}
+nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.logo{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-.02em;text-decoration:none}
+.logo span{color:var(--accent)}
+.back{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:6px 12px;border-radius:7px}
+.back:hover{color:var(--text)}
+.hero{text-align:center;padding:40px 20px 24px;max-width:680px;margin:0 auto}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.03em;margin-bottom:10px;line-height:1.15}
+.hero h1 span{color:var(--accent)}
+.hero p{color:var(--muted);font-size:.9rem;line-height:1.6;margin-bottom:8px}
+.tool{max-width:860px;margin:0 auto;padding:0 16px 40px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:14px}
+.card-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:16px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+.field{margin-bottom:13px}.field:last-child{margin-bottom:0}
+.field label{display:block;font-size:.79rem;color:var(--muted);margin-bottom:5px;font-weight:500}
+.field input,.field select{width:100%;background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:10px 12px;color:var(--text);font-size:.9rem;outline:none;transition:border-color .15s;font-family:inherit}
+.field input:focus,.field select:focus{border-color:var(--accent)}
+.field select option{background:#111}
+.pfx{position:relative}.pfx::before{content:"$";position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#444;font-size:.88rem;z-index:1;pointer-events:none}
+.pfx input{padding-left:23px}
+.tgl-g{display:flex;gap:5px}
+.tgl{flex:1;background:#0d0d0d;border:1px solid #222;border-radius:7px;padding:8px 6px;color:var(--muted);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .15s;text-align:center;font-family:inherit}
+.tgl.on{background:var(--adim);border-color:var(--aborder);color:var(--accent)}
+.btn{width:100%;background:var(--accent);color:#000;font-weight:800;font-size:.92rem;padding:12px;border-radius:9px;border:none;cursor:pointer;transition:opacity .15s;font-family:inherit;margin-top:6px}
+.btn:hover{opacity:.87}
+.rbox{background:#0d0d0d;border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.rrow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #141414;font-size:.86rem}
+.rrow:last-child{border-bottom:none}
+.rrow .l{color:var(--muted)}.rrow .v{font-weight:700}
+.rrow.big .l{font-size:.7rem;text-transform:uppercase;letter-spacing:.06em;color:#444}
+.rrow.big .v{font-size:1.7rem;font-weight:800;letter-spacing:-.03em}
+.pos{color:var(--accent)}.neg{color:var(--red)}
+.phld{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 16px;text-align:center;color:#2a2a2a}
+.phld p{font-size:.82rem;margin-top:10px;line-height:1.5}
+.spin-wrap{text-align:center;padding:40px;color:var(--muted);font-size:.85rem}
+.spin{display:inline-block;width:22px;height:22px;border:2px solid #222;border-top-color:var(--accent);border-radius:50%;animation:sp .7s linear infinite;margin-bottom:10px}
+@keyframes sp{to{transform:rotate(360deg)}}
+.cta-card{background:linear-gradient(135deg,#0a1a0a,#0d1f0d);border:1px solid var(--aborder);border-radius:14px;padding:22px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:14px}
+.cta-card h4{font-size:.92rem;font-weight:700;margin-bottom:5px}
+.cta-card p{font-size:.83rem;color:var(--muted);max-width:360px;line-height:1.55}
+.cta-a{display:inline-block;background:var(--accent);color:#000;font-weight:800;font-size:.85rem;padding:11px 20px;border-radius:8px;text-decoration:none;white-space:nowrap}
+.suite-link{display:block;text-align:center;margin:20px auto;font-size:.85rem;color:var(--muted)}
+.suite-link a{color:var(--accent);text-decoration:none;font-weight:700}
+.faq{max-width:700px;margin:0 auto;padding:0 16px 40px}
+.faq h2{font-size:1rem;font-weight:800;margin-bottom:18px;text-align:center;color:#333}
+details{background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px 16px;cursor:pointer;margin-bottom:8px}
+summary{font-weight:700;font-size:.86rem;list-style:none;color:#e5e5e5}
+details p{margin-top:10px;font-size:.82rem;color:#777;line-height:1.6}
+.disc{text-align:center;color:#272727;font-size:.7rem;padding:16px;max-width:560px;margin:0 auto;line-height:1.6}
+</style>
+</head>
+<body>
+<nav>
+  <a href="https://coinsuitetool.com" class="logo">Crypto<span>Tools</span> Pro</a>
+  <a href="https://coinsuitetool.com" class="back">← All 4 Tools</a>
+</nav>
+
+<div class="hero">
+  <h1>Bitcoin <span>DCA Calculator</span><br/>with Live Historical Prices</h1>
+  <p>See exactly what weekly or monthly crypto buys would be worth today. Uses real price data — no estimates, no guesses.</p>
+</div>
+
+<div class="tool">
+  <div class="g2">
+    <div class="card">
+      <div class="card-title">Your DCA Strategy</div>
+      <div class="field"><label>Coin</label>
+        <select id="dca-coin">
+          <option value="XBTUSD">Bitcoin (BTC)</option>
+          <option value="ETHUSD">Ethereum (ETH)</option>
+          <option value="SOLUSD">Solana (SOL)</option>
+          <option value="XRPUSD">XRP</option>
+          <option value="ADAUSD">Cardano (ADA)</option>
+          <option value="DOTUSD">Polkadot (DOT)</option>
+          <option value="AVAXUSD">Avalanche (AVAX)</option>
+          <option value="LINKUSD">Chainlink (LINK)</option>
+          <option value="LTCUSD">Litecoin (LTC)</option>
+          <option value="XDGUSD">Dogecoin (DOGE)</option>
+          <option value="MATICUSD">Polygon (MATIC)</option>
+        </select>
+      </div>
+      <div class="field"><label>Amount per period</label>
+        <div class="pfx"><input type="number" id="dca-amount" value="100" min="1"/></div>
+      </div>
+      <div class="field"><label>Buy frequency</label>
+        <div class="tgl-g">
+          <button class="tgl on" id="tg-weekly" onclick="setFreq('weekly')">Weekly</button>
+          <button class="tgl" id="tg-monthly" onclick="setFreq('monthly')">Monthly</button>
+        </div>
+      </div>
+      <div class="field"><label>Time period</label>
+        <select id="dca-period">
+          <option value="180">6 Months</option>
+          <option value="365" selected>1 Year</option>
+          <option value="720">2 Years</option>
+        </select>
+      </div>
+      <button class="btn" onclick="calcDCA()">Calculate My Returns →</button>
+    </div>
+    <div class="card">
+      <div class="card-title">Your Results</div>
+      <div class="phld" id="dca-ph"><svg width="38" height="38" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18"/><path d="M7 16l4-4 4 4 4-4"/></svg><p>Enter your strategy and click Calculate</p></div>
+      <div class="spin-wrap" id="dca-spin" style="display:none"><div class="spin"></div><br/>Fetching live prices...</div>
+      <div id="dca-res" style="display:none">
+        <div class="rbox">
+          <div class="rrow big"><span class="l">Current Value</span><span class="v pos" id="d-val">—</span></div>
+          <div class="rrow"><span class="l">Total Invested</span><span class="v" id="d-inv">—</span></div>
+          <div class="rrow"><span class="l">Profit / Loss</span><span class="v" id="d-profit">—</span></div>
+          <div class="rrow"><span class="l">ROI</span><span class="v" id="d-roi">—</span></div>
+          <div class="rrow"><span class="l">Avg Buy Price</span><span class="v" id="d-avg">—</span></div>
+          <div class="rrow"><span class="l">Total Purchases</span><span class="v" id="d-count">—</span></div>
+          <div class="rrow"><span class="l">Coins Held</span><span class="v" id="d-coins">—</span></div>
+        </div>
+      </div>
+      <div id="dca-err" style="display:none;color:var(--red);font-size:.82rem;padding:20px;text-align:center">Could not load price data. Please try again.</div>
+    </div>
+  </div>
+  <div class="cta-card" id="dca-cta" style="display:none">
+    <div><h4>Time to report those gains?</h4><p>Koinly tracks your DCA portfolio across 700+ exchanges and generates your IRS/HMRC/ATO-ready tax report automatically.</p></div>
+    <a href="https://koinly.io/?via=25ED9818&utm_source=affiliate" target="_blank" class="cta-a">Get Tax Report on Koinly →</a>
+  </div>
+</div>
+
+<p class="suite-link">Need exchange fee comparison, position sizing, or tax estimation too? <a href="https://coinsuitetool.com">Try all 4 free tools →</a></p>
+
+<div class="faq">
+  <h2>Frequently Asked Questions</h2>
+  <details><summary>What is dollar-cost averaging (DCA) in crypto?</summary><p>DCA means buying a fixed dollar amount at regular intervals regardless of price. You buy more coins when prices are low and fewer when high — lowering your average cost over time and removing emotional decision-making from investing.</p></details>
+  <details><summary>How much would $100/week in Bitcoin be worth today?</summary><p>Use the calculator above with $100 weekly and select 1 Year or 2 Years to see your exact returns. The result uses real historical Kraken price data, not estimates.</p></details>
+  <details><summary>Is DCA better than buying all at once?</summary><p>In volatile markets like crypto, DCA typically outperforms lump sum investing because it removes the risk of buying at a peak. It's recommended for most investors because it's simple, consistent, and removes emotional decisions.</p></details>
+  <details><summary>Where does the price data come from?</summary><p>All prices come from the Kraken public API — one of the largest and most reliable crypto exchanges. Data is fetched live each time you calculate, so you always get accurate current and historical prices.</p></details>
+</div>
+
+<p class="disc">CryptoTools Pro provides estimates only. Not financial advice. Past performance does not guarantee future results.</p>
+
+<script>
+const fmt = n => '$'+Math.round(n).toLocaleString();
+const fmtD = (n,d=2) => '$'+n.toLocaleString(undefined,{minimumFractionDigits:d,maximumFractionDigits:d});
+let dcaFreq='weekly';
+function setFreq(f){dcaFreq=f;['weekly','monthly'].forEach(v=>document.getElementById('tg-'+v).classList.toggle('on',v===f));}
+async function calcDCA(){
+  const pair=document.getElementById('dca-coin').value;
+  const amt=parseFloat(document.getElementById('dca-amount').value)||100;
+  const days=parseInt(document.getElementById('dca-period').value);
+  ['dca-ph','dca-res','dca-err'].forEach(id=>document.getElementById(id).style.display='none');
+  document.getElementById('dca-spin').style.display='block';
+  try{
+    const since=Math.floor(Date.now()/1000)-days*86400;
+    const r=await fetch(`https://api.kraken.com/0/public/OHLC?pair=${pair}&interval=1440&since=${since}`);
+    const d=await r.json();
+    if(d.error?.length) throw new Error();
+    const raw=Object.values(d.result).find(v=>Array.isArray(v));
+    const prices=raw.map(c=>[c[0]*1000,parseFloat(c[4])]);
+    const intv=dcaFreq==='weekly'?7*864e5:30*864e5;
+    let buys=[],last=0;
+    for(const [ts,price] of prices){if(ts-last>=intv){buys.push(amt/price);last=ts;}}
+    const invested=buys.length*amt;
+    const coins=buys.reduce((s,c)=>s+c,0);
+    const cur=prices[prices.length-1][1];
+    const val=coins*cur;
+    const profit=val-invested;
+    const roi=((profit/invested)*100).toFixed(1);
+    const isPos=profit>=0;
+    document.getElementById('dca-spin').style.display='none';
+    document.getElementById('dca-res').style.display='block';
+    document.getElementById('dca-cta').style.display='flex';
+    document.getElementById('d-val').textContent=fmt(val);
+    document.getElementById('d-val').className='v '+(isPos?'pos':'neg');
+    document.getElementById('d-inv').textContent=fmt(invested);
+    document.getElementById('d-profit').textContent=(isPos?'+':'')+fmt(profit);
+    document.getElementById('d-profit').className='v '+(isPos?'pos':'neg');
+    document.getElementById('d-roi').textContent=(isPos?'+':'')+roi+'%';
+    document.getElementById('d-roi').className='v '+(isPos?'pos':'neg');
+    document.getElementById('d-avg').textContent=fmtD(invested/coins,0);
+    document.getElementById('d-count').textContent=buys.length+' purchases';
+    document.getElementById('d-coins').textContent=coins.toFixed(6);
+  }catch{
+    document.getElementById('dca-spin').style.display='none';
+    document.getElementById('dca-err').style.display='block';
+  }
+}
+</script>
+</body>
+</html>

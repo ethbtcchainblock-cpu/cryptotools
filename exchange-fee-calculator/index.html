@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Crypto Exchange Fee Comparison 2026 — Find the Cheapest Exchange</title>
+<meta name="description" content="Compare crypto exchange fees across Binance, Coinbase, Kraken, Bybit, OKX, Hyperliquid, KuCoin and Gate.io. See spot and futures maker/taker rates and calculate your monthly savings."/>
+<meta name="keywords" content="crypto exchange fee comparison, cheapest crypto exchange, binance vs coinbase fees, bybit fees, kraken fees, lowest crypto trading fees 2026"/>
+<link rel="canonical" href="https://coinsuitetool.com/exchange-fee-calculator/"/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://coinsuitetool.com/exchange-fee-calculator/"/>
+<meta property="og:title" content="Crypto Exchange Fee Comparison 2026 — 8 Exchanges Side by Side"/>
+<meta property="og:description" content="Compare spot and futures fees across Binance, Coinbase, Kraken, Bybit, OKX and more. Calculate exactly how much you're overpaying."/>
+<meta property="og:image" content="https://coinsuitetool.com/og-image.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://coinsuitetool.com/og-image.svg"/>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"Crypto Exchange Fee Comparator","url":"https://coinsuitetool.com/exchange-fee-calculator/","description":"Compare crypto trading fees across 8 major exchanges including Binance, Coinbase, Kraken, Bybit, OKX, Hyperliquid, KuCoin and Gate.io.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which crypto exchange has the lowest trading fees?","acceptedAnswer":{"@type":"Answer","text":"Hyperliquid has the lowest futures fees with a -0.01% maker rebate (they pay you) and 0.035% taker. For spot trading, Bybit and OKX offer 0.08-0.10% fees. Coinbase Advanced is the most expensive at 0.40-0.60% taker."}},{"@type":"Question","name":"How much cheaper is Bybit than Coinbase?","acceptedAnswer":{"@type":"Answer","text":"Coinbase Advanced charges 0.60% taker fees vs Bybit's 0.10%. On $10,000 monthly volume that's $60/mo on Coinbase vs $10/mo on Bybit — saving $50/mo or $600/year just by switching exchanges."}},{"@type":"Question","name":"What is the difference between maker and taker fees?","acceptedAnswer":{"@type":"Answer","text":"Maker fees apply when you place a limit order that adds liquidity to the order book (your order waits to be filled). Taker fees apply when you place a market order that removes liquidity (instant fill). Maker fees are almost always lower than taker fees."}},{"@type":"Question","name":"What does a negative maker fee mean?","acceptedAnswer":{"@type":"Answer","text":"A negative maker fee means the exchange pays you a rebate for providing liquidity. For example, Hyperliquid's -0.01% maker fee means you earn $1 for every $10,000 in maker orders placed."}}]}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#0a0a0a;--card:#111;--border:#1e1e1e;--text:#e5e5e5;--muted:#555;--accent:#22c55e;--adim:#22c55e14;--aborder:#22c55e33;--red:#f87171;--yellow:#f0b429}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;min-height:100vh}
+nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--border)}
+.logo{font-size:1rem;font-weight:800;color:#fff;letter-spacing:-.02em;text-decoration:none}
+.logo span{color:var(--accent)}
+.back{font-size:.8rem;color:var(--muted);text-decoration:none;border:1px solid var(--border);padding:6px 12px;border-radius:7px}
+.hero{text-align:center;padding:40px 20px 24px;max-width:680px;margin:0 auto}
+.hero h1{font-size:clamp(1.6rem,4vw,2.4rem);font-weight:800;letter-spacing:-.03em;margin-bottom:10px;line-height:1.15}
+.hero h1 span{color:var(--accent)}
+.hero p{color:var(--muted);font-size:.9rem;line-height:1.6}
+.tool{max-width:900px;margin:0 auto;padding:16px 16px 40px}
+.card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:22px;margin-bottom:14px}
+.card-title{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:16px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(max-width:600px){.g2{grid-template-columns:1fr}}
+.field{margin-bottom:13px}.field:last-child{margin-bottom:0}
+.field label{display:block;font-size:.79rem;color:var(--muted);margin-bottom:5px;font-weight:500}
+.field input{width:100%;background:#0d0d0d;border:1px solid #222;border-radius:8px;padding:10px 12px;color:var(--text);font-size:.9rem;outline:none;transition:border-color .15s;font-family:inherit}
+.field input:focus{border-color:var(--accent)}
+.pfx{position:relative}.pfx::before{content:"$";position:absolute;left:12px;top:50%;transform:translateY(-50%);color:#444;font-size:.88rem;z-index:1;pointer-events:none}
+.pfx input{padding-left:23px}
+.tgl-g{display:flex;gap:5px}
+.tgl{flex:1;background:#0d0d0d;border:1px solid #222;border-radius:7px;padding:8px 6px;color:var(--muted);font-size:.8rem;font-weight:600;cursor:pointer;transition:all .15s;text-align:center;font-family:inherit}
+.tgl.on{background:var(--adim);border-color:var(--aborder);color:var(--accent)}
+.btn{width:100%;background:var(--accent);color:#000;font-weight:800;font-size:.92rem;padding:12px;border-radius:9px;border:none;cursor:pointer;transition:opacity .15s;font-family:inherit;margin-top:6px}
+.btn:hover{opacity:.87}
+.fee-tbl{width:100%;border-collapse:collapse;font-size:.83rem}
+.fee-tbl th{text-align:left;color:var(--muted);font-weight:600;font-size:.69rem;text-transform:uppercase;letter-spacing:.06em;padding:9px 12px;border-bottom:1px solid var(--border)}
+.fee-tbl td{padding:11px 12px;border-bottom:1px solid #141414}
+.fee-tbl tr:last-child td{border-bottom:none}
+.fee-tbl tr:hover td{background:#0d0d0d}
+.fee-tbl .en{font-weight:700}
+.fl{color:var(--accent);font-weight:700}.fm{color:var(--text)}.fh{color:var(--red)}
+.bdg{font-size:.68rem;padding:3px 8px;border-radius:100px;font-weight:600;white-space:nowrap}
+.bg{background:#22c55e18;color:#22c55e;border:1px solid #22c55e33}
+.by{background:#f0b42918;color:#f0b429;border:1px solid #f0b42933}
+.br{background:#f8717118;color:#f87171;border:1px solid #f8717133}
+.rbox{background:#0d0d0d;border:1px solid var(--border);border-radius:10px;padding:16px 18px}
+.rrow{display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #141414;font-size:.86rem}
+.rrow:last-child{border-bottom:none}
+.rrow .l{color:var(--muted)}.rrow .v{font-weight:700}
+.phld{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 16px;text-align:center;color:#2a2a2a}
+.phld p{font-size:.82rem;margin-top:10px;line-height:1.5}
+.pos{color:var(--accent)}.neg{color:var(--red)}
+.cta-card{background:linear-gradient(135deg,#0a1a0a,#0d1f0d);border:1px solid var(--aborder);border-radius:14px;padding:22px;display:flex;justify-content:space-between;align-items:center;gap:18px;flex-wrap:wrap;margin-top:14px}
+.cta-card h4{font-size:.92rem;font-weight:700;margin-bottom:5px}
+.cta-card p{font-size:.83rem;color:var(--muted);max-width:360px;line-height:1.55}
+.cta-a{display:inline-block;background:var(--accent);color:#000;font-weight:800;font-size:.85rem;padding:11px 20px;border-radius:8px;text-decoration:none;white-space:nowrap}
+.suite-link{display:block;text-align:center;margin:20px auto;font-size:.85rem;color:var(--muted)}
+.suite-link a{color:var(--accent);text-decoration:none;font-weight:700}
+.faq{max-width:700px;margin:0 auto;padding:0 16px 40px}
+.faq h2{font-size:1rem;font-weight:800;margin-bottom:18px;text-align:center;color:#333}
+details{background:#111;border:1px solid #1e1e1e;border-radius:10px;padding:14px 16px;cursor:pointer;margin-bottom:8px}
+summary{font-weight:700;font-size:.86rem;list-style:none;color:#e5e5e5}
+details p{margin-top:10px;font-size:.82rem;color:#777;line-height:1.6}
+.disc{text-align:center;color:#272727;font-size:.7rem;padding:16px;max-width:560px;margin:0 auto;line-height:1.6}
+</style>
+</head>
+<body>
+<nav>
+  <a href="https://coinsuitetool.com" class="logo">Crypto<span>Tools</span> Pro</a>
+  <a href="https://coinsuitetool.com" class="back">← All 4 Tools</a>
+</nav>
+<div class="hero">
+  <h1>Crypto Exchange <span>Fee Comparison</span> 2026</h1>
+  <p>Compare spot and futures trading fees across 8 major exchanges. Find out exactly how much you're overpaying and how much you'd save by switching.</p>
+</div>
+<div class="tool">
+  <div class="card" style="overflow-x:auto">
+    <div class="card-title">Spot &amp; Futures Fees — All 8 Exchanges</div>
+    <table class="fee-tbl">
+      <thead><tr><th>Exchange</th><th>Spot Maker</th><th>Spot Taker</th><th>Futures Maker</th><th>Futures Taker</th><th>Best For</th></tr></thead>
+      <tbody>
+        <tr><td class="en">Hyperliquid</td><td class="fm">—</td><td class="fm">—</td><td class="fl">-0.01%</td><td class="fl">0.035%</td><td><span class="bdg bg">Futures</span></td></tr>
+        <tr><td class="en">Bybit</td><td class="fl">0.10%</td><td class="fm">0.10%</td><td class="fl">-0.01%</td><td class="fl">0.06%</td><td><span class="bdg bg">Spot + Futures</span></td></tr>
+        <tr><td class="en">OKX</td><td class="fl">0.08%</td><td class="fm">0.10%</td><td class="fl">0.02%</td><td class="fl">0.05%</td><td><span class="bdg bg">Spot + Futures</span></td></tr>
+        <tr><td class="en">Binance</td><td class="fl">0.10%</td><td class="fm">0.10%</td><td class="fl">0.02%</td><td class="fl">0.05%</td><td><span class="bdg bg">Futures</span></td></tr>
+        <tr><td class="en">Gate.io</td><td class="fm">0.20%</td><td class="fm">0.20%</td><td class="fl">0.015%</td><td class="fl">0.05%</td><td><span class="bdg by">Altcoins</span></td></tr>
+        <tr><td class="en">KuCoin</td><td class="fl">0.10%</td><td class="fm">0.10%</td><td class="fl">0.02%</td><td class="fm">0.06%</td><td><span class="bdg by">Altcoins</span></td></tr>
+        <tr><td class="en">Kraken</td><td class="fm">0.16%</td><td class="fh">0.26%</td><td class="fl">0.02%</td><td class="fl">0.05%</td><td><span class="bdg by">US / EU</span></td></tr>
+        <tr><td class="en">Coinbase Adv.</td><td class="fh">0.40%</td><td class="fh">0.60%</td><td class="fm">—</td><td class="fm">—</td><td><span class="bdg br">Beginners</span></td></tr>
+      </tbody>
+    </table>
+    <p style="color:#2a2a2a;font-size:.72rem;margin-top:12px">Negative maker fee = exchange pays you. Fees vary by volume tier. Last verified June 2026.</p>
+  </div>
+  <div class="card">
+    <div class="card-title">Calculate Your Monthly Fee Savings</div>
+    <div class="g2">
+      <div>
+        <div class="field"><label>Monthly trading volume</label>
+          <div class="pfx"><input type="number" id="vol" placeholder="10,000" min="0"/></div>
+        </div>
+        <div class="field"><label>Order type</label>
+          <div class="tgl-g">
+            <button class="tgl on" id="tg-taker" onclick="setOrder('taker')">Taker (market)</button>
+            <button class="tgl" id="tg-maker" onclick="setOrder('maker')">Maker (limit)</button>
+          </div>
+        </div>
+        <button class="btn" onclick="calcFees()">Compare My Fees →</button>
+      </div>
+      <div>
+        <div class="phld" id="fee-ph"><p>Enter your monthly volume to see what you're paying on each exchange</p></div>
+        <div class="rbox" id="fee-res" style="display:none"></div>
+      </div>
+    </div>
+  </div>
+  <div class="cta-card">
+    <div><h4>Trade on multiple exchanges? Track it all for tax time.</h4><p>Koinly auto-imports your full trade history from all 8 exchanges above and generates your crypto tax report in minutes.</p></div>
+    <a href="https://koinly.io/?via=25ED9818&utm_source=affiliate" target="_blank" class="cta-a">Connect Your Exchange →</a>
+  </div>
+</div>
+
+<p class="suite-link">Also need a DCA calculator, tax estimator, or position sizer? <a href="https://coinsuitetool.com">Try all 4 free tools →</a></p>
+
+<div class="faq">
+  <h2>Exchange Fee FAQs</h2>
+  <details><summary>Which crypto exchange has the lowest fees?</summary><p>Hyperliquid has the lowest futures fees (-0.01% maker rebate). For spot trading, OKX offers 0.08% maker / 0.10% taker. Coinbase Advanced is the most expensive at 0.40% maker / 0.60% taker — 6x more than the cheapest alternatives.</p></details>
+  <details><summary>How much cheaper is Bybit than Coinbase?</summary><p>Coinbase charges 0.60% taker vs Bybit's 0.10%. On $10,000/month volume: $60/mo on Coinbase vs $10/mo on Bybit. That's $600/year saved by just switching exchanges — for the exact same trades.</p></details>
+  <details><summary>What is the difference between maker and taker fees?</summary><p>Maker fees apply to limit orders that add liquidity (wait to be filled). Taker fees apply to market orders that fill instantly. Maker fees are almost always lower. Using limit orders instead of market orders saves you money on every trade.</p></details>
+  <details><summary>What does a negative maker fee mean?</summary><p>A negative maker fee means the exchange pays YOU a rebate for placing limit orders. Hyperliquid's -0.01% maker fee means you earn $1 per $10,000 in limit orders — instead of paying fees, you're paid to trade.</p></details>
+</div>
+<p class="disc">Fees change frequently — verify on each exchange before trading. Not financial advice.</p>
+<script>
+let feeOrder='taker';
+function setOrder(t){feeOrder=t;['taker','maker'].forEach(v=>document.getElementById('tg-'+v).classList.toggle('on',v===t));}
+const EXCH=[
+  {n:'Hyperliquid',sm:null,st:null,fm:-0.0001,ft:0.00035},
+  {n:'Bybit',sm:0.001,st:0.001,fm:-0.0001,ft:0.0006},
+  {n:'OKX',sm:0.0008,st:0.001,fm:0.0002,ft:0.0005},
+  {n:'Binance',sm:0.001,st:0.001,fm:0.0002,ft:0.0005},
+  {n:'Gate.io',sm:0.002,st:0.002,fm:0.00015,ft:0.0005},
+  {n:'KuCoin',sm:0.001,st:0.001,fm:0.0002,ft:0.0006},
+  {n:'Kraken',sm:0.0016,st:0.0026,fm:0.0002,ft:0.0005},
+  {n:'Coinbase',sm:0.004,st:0.006,fm:null,ft:null},
+];
+function calcFees(){
+  const vol=parseFloat(document.getElementById('vol').value)||0;
+  if(!vol){alert('Enter your monthly trading volume.');return;}
+  const rows=EXCH.map(e=>{const rate=feeOrder==='maker'?e.sm:e.st;return{n:e.n,cost:rate!==null?vol*rate:null};}).filter(r=>r.cost!==null).sort((a,b)=>a.cost-b.cost);
+  const best=rows[0].cost;let html='';
+  rows.forEach((r,i)=>{const cls=i===0?'pos':r.cost-best>vol*0.002?'neg':'';const lbl=i===0?' ✓ cheapest':'';html+=`<div class="rrow"><span class="l">${r.n}</span><span class="v ${cls}">$${r.cost.toFixed(2)}/mo${lbl}</span></div>`;});
+  const saved=rows[rows.length-1].cost-best;
+  html+=`<div class="rrow" style="margin-top:6px"><span class="l" style="color:var(--accent)">Max savings vs most expensive</span><span class="v pos">$${saved.toFixed(2)}/mo</span></div>`;
+  document.getElementById('fee-ph').style.display='none';
+  document.getElementById('fee-res').style.display='block';
+  document.getElementById('fee-res').innerHTML=html;
+}
+</script>
+</body>
+</html>
