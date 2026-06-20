@@ -11,10 +11,12 @@
 <meta property="og:url" content="https://coinsuitetool.com/"/>
 <meta property="og:title" content="CryptoTools Pro — Free DCA, Fee, Risk & Tax Calculator"/>
 <meta property="og:description" content="4 free crypto tools in one place: DCA calculator, exchange fee comparator, position size calculator, and global tax estimator."/>
-<meta name="twitter:card" content="summary"/>
+<meta property="og:image" content="https://coinsuitetool.com/og-image.svg"/>
+<meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:site" content="@Justin_David12"/>
 <meta name="twitter:title" content="CryptoTools Pro — Free DCA, Fee, Risk &amp; Tax Calculator"/>
 <meta name="twitter:description" content="4 free crypto tools: DCA with live prices, exchange fee comparator, position size calculator, crypto tax for US/UK/CA/AU/DE/IN/SG/UAE/FR/JP. No signup."/>
+<meta name="twitter:image" content="https://coinsuitetool.com/og-image.svg"/>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebApplication","name":"CryptoTools Pro","url":"https://coinsuitetool.com/","description":"Free cryptocurrency toolkit with DCA calculator, exchange fee comparator, position size calculator, and global tax estimator.","applicationCategory":"FinanceApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How does crypto dollar-cost averaging (DCA) work?","acceptedAnswer":{"@type":"Answer","text":"DCA means buying a fixed dollar amount of crypto at regular intervals regardless of price. Over time this averages out your cost basis — you buy more coins when prices are low and fewer when prices are high. Use the DCA calculator at coinsuitetool.com to see your exact returns with live historical prices."}},{"@type":"Question","name":"Which crypto exchange has the lowest trading fees?","acceptedAnswer":{"@type":"Answer","text":"Hyperliquid has the lowest futures fees (-0.01% maker rebate, 0.035% taker). For spot trading, Bybit and OKX offer 0.08–0.10% fees. Coinbase Advanced charges the highest at 0.40–0.60%. See the full comparison at coinsuitetool.com."}},{"@type":"Question","name":"Is crypto tax-free in Germany?","acceptedAnswer":{"@type":"Answer","text":"Yes — in Germany, cryptocurrency held for more than 1 year is completely tax-free (§23 EStG). If held less than 1 year, gains are taxed at a flat 25% Abgeltungssteuer plus 5.5% solidarity surcharge. Use the free tax estimator at coinsuitetool.com to calculate your liability."}},{"@type":"Question","name":"Is there capital gains tax on crypto in Singapore?","acceptedAnswer":{"@type":"Answer","text":"No. Singapore does not have a capital gains tax, so individual investors pay 0% tax on cryptocurrency profits. Singapore is one of the most crypto-friendly tax jurisdictions in the world."}},{"@type":"Question","name":"How much tax do I pay on crypto in India?","acceptedAnswer":{"@type":"Answer","text":"India taxes cryptocurrency gains at a flat 30% rate regardless of holding period, plus a 4% Health and Education Cess, for an effective rate of 31.2%. Losses cannot be offset against other income."}},{"@type":"Question","name":"How do I calculate position size for crypto trading?","acceptedAnswer":{"@type":"Answer","text":"Position size = (Account size × Risk %) ÷ (|Entry price − Stop price| ÷ Entry price). For example: $10,000 account, 2% risk, entry at $100,000, stop at $95,000 → Position = $200 ÷ 5% = $4,000. Use the free position size calculator at coinsuitetool.com."}}]}</script>
 <style>
@@ -185,6 +187,12 @@ nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-betw
       </div>
       <div id="dca-err" style="display:none;color:var(--red);font-size:.82rem;padding:20px;text-align:center">Could not load price data. Please try again in a moment.</div>
     </div>
+  </div>
+  <div id="dca-share" style="display:none;text-align:center;margin-top:10px">
+    <a id="dca-tweet" href="#" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#000;color:#fff;font-weight:700;font-size:.82rem;padding:10px 18px;border-radius:8px;text-decoration:none;border:1px solid #333;transition:opacity .15s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.722-8.858L1.547 2.25H8.12l4.26 5.632 5.864-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share your results on X
+    </a>
   </div>
   <div class="cta-card" id="dca-cta" style="display:none">
     <div><h4>Time to report those gains?</h4><p>Koinly tracks your DCA portfolio across 700+ exchanges and wallets and generates your IRS/HMRC/ATO-ready tax report automatically.</p></div>
@@ -372,6 +380,12 @@ nav{padding:14px 20px;display:flex;align-items:center;justify-content:space-betw
       </div>
     </div>
   </div>
+  <div id="tax-share" style="display:none;text-align:center;margin-top:10px">
+    <a id="tax-tweet" href="#" target="_blank" style="display:inline-flex;align-items:center;gap:8px;background:#000;color:#fff;font-weight:700;font-size:.82rem;padding:10px 18px;border-radius:8px;text-decoration:none;border:1px solid #333;transition:opacity .15s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.742l7.722-8.858L1.547 2.25H8.12l4.26 5.632 5.864-5.632zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      Share your tax estimate on X
+    </a>
+  </div>
   <div class="cta-card" id="tax-cta" style="display:none">
     <div><h4>This is an estimate. Your actual bill depends on every trade.</h4><p>Koinly automatically imports all your transactions from 700+ exchanges and wallets, calculates your exact gain/loss, and generates an IRS / HMRC / ATO-ready tax report.</p></div>
     <a href="https://koinly.io/?via=25ED9818&utm_source=affiliate" target="_blank" class="cta-a">Get Exact Report on Koinly →</a>
@@ -464,6 +478,10 @@ async function calcDCA(){
     document.getElementById('d-avg').textContent=fmtD(invested/coins,0);
     document.getElementById('d-count').textContent=buys.length+' purchases';
     document.getElementById('d-coins').textContent=coins.toFixed(6);
+    const coinName=document.getElementById('dca-coin').options[document.getElementById('dca-coin').selectedIndex].text.split(' ')[0];
+    const tweetText=`I DCA'd $${amt}/${dcaFreq==='weekly'?'week':'month'} into ${coinName} for ${days>=365?Math.round(days/365)+' year'+(days>=730?'s':''):days/30+' months'} using @coinsuitetool\n\nInvested: ${fmt(invested)}\nNow worth: ${fmt(val)}\nROI: ${isPos?'+':''}${roi}%\n\nCalculate yours free 👇\nhttps://coinsuitetool.com`;
+    document.getElementById('dca-tweet').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(tweetText);
+    document.getElementById('dca-share').style.display='block';
   }catch{
     document.getElementById('dca-spin').style.display='none';
     document.getElementById('dca-err').style.display='block';
@@ -630,6 +648,10 @@ function calcTax(){
   document.getElementById('t-l3').textContent=fmt(l3);
   document.getElementById('t-rate').textContent=effRate+'%';
   document.getElementById('t-keep').textContent=fmt(keep);
+  const countryNames={us:'🇺🇸 US',uk:'🇬🇧 UK',ca:'🇨🇦 Canada',au:'🇦🇺 Australia',de:'🇩🇪 Germany',in:'🇮🇳 India',sg:'🇸🇬 Singapore',ae:'🇦🇪 UAE',fr:'🇫🇷 France',jp:'🇯🇵 Japan'};
+  const taxTweet=`Just calculated my crypto tax estimate for ${countryNames[country]} using @coinsuitetool\n\nGains: ${fmt(gains)}\nTax owed: ${fmt(total)} (${effRate}%)\nI keep: ${fmt(keep)}\n\nFree tool, no signup 👇\nhttps://coinsuitetool.com`;
+  document.getElementById('tax-tweet').href='https://twitter.com/intent/tweet?text='+encodeURIComponent(taxTweet);
+  document.getElementById('tax-share').style.display='block';
 }
 
 onCountry();
